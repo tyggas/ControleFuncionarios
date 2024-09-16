@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamentos</title>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Gerenciamento de Departamentos</h1>
+            <div class="col-md-6 offset-md-3">
+                <h3 id="formTitle">Incluir Departamento</h3>
+                <form id="formDepartamento" action="incluirDepartamento.jsp" method="post">
+                    <input type="hidden" id="idDepto" name="idDepto" value="">
+                    <div class="form-group">
+                        <label for="descDepto">Descrição do Departamento:</label>
+                        <input type="text" class="form-control" id="descDepto" name="descDepto" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Incluir</button>
+                    <a href="departamento.html" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+
+    <div class="container mt-3">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="FormTitle">Editar Departamento</h3>
+                <form action="alterarDepartamento.jsp" method="post">
+                    <input type="hidden" id="idDepto" name="idDepto">
+                    <div class="form-group">
+                        <label for="idDepto">id do departamento:</label>
+                        <input type="text" class="form-control" id="idDepto" name="idDepto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descDepto">Descrição do Departamento:</label>
+                        <input type="text" class="form-control" id="descDepto" name="descDepto" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    <a href="departamento.html" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    
+    <div class="container mt-3">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="FormTitle">Excluir Departamento</h3>
+                <form action="alterarDepartamento.jsp" method="post">
+                    <input type="hidden" id="idDepto" name="idDepto">
+                    <div class="form-group">
+                        <label for="idDepto">id do departamento:</label>
+                        <input type="text" class="form-control" id="idDepto" name="idDepto" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Excluir</button>
+                    <a href="departamento.html" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    
+
+
+    <!-- Scripts -->
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'></script>
+    <script>
+        // Função para carregar dados no formulário para edição
+        function editarDepartamento(id, descricao) {
+            document.getElementById('formTitle').innerText = 'Alterar Departamento';
+            document.getElementById('idDepto').value = id;
+            document.getElementById('descDepto').value = descricao;
+            document.getElementById('submitBtn').innerText = 'Alterar';
+            document.getElementById('cancelBtn').style.display = 'inline';
+        };
+    </script>
+</body>
+</html>

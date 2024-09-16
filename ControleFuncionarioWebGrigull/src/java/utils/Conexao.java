@@ -8,8 +8,8 @@ public class Conexao {
 	public static Connection conectar() throws ClassNotFoundException {
 		Connection con = null;
 		String url = "jdbc:mysql://localhost:3306/controlefuncionario";
-		String user = "root";
-		String password = "";
+		String user = "usufunc";
+		String password = "passfunc";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, password);
